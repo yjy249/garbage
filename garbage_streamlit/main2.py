@@ -34,9 +34,9 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str,
-                        default='garm/weight/best.pt', help='model.pt path(s)')
+                        default='garbage_streamlit/garm/weight/best.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str,
-                        default='garm/data/images', help='source')
+                        default='garbage_streamlit/garm/data/images', help='source')
     parser.add_argument('--img-size', type=int, default=640,
                         help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float,
@@ -82,8 +82,8 @@ if __name__ == '__main__':
             with st.spinner(text='资源加载中...'):
                 st.sidebar.image(uploaded_file)
                 picture = Image.open(uploaded_file)
-                picture = picture.save(f'garm/data/images/{uploaded_file.name}')
-                opt.source = f'garm/data/images/{uploaded_file.name}'
+                picture = picture.save(f'garbage_streamlit/garm/data/images/{uploaded_file.name}')
+                opt.source = f'garbage_streamlit/garm/data/images/{uploaded_file.name}'
         else:
             is_valid = False
     else:
@@ -92,9 +92,9 @@ if __name__ == '__main__':
             is_valid = True
             with st.spinner(text='资源加载中...'):
                 st.sidebar.video(uploaded_file)
-                with open(os.path.join("garm/data", "videos", uploaded_file.name), "wb") as f:
+                with open(os.path.join("garbage_streamlit/garm/data", "videos", uploaded_file.name), "wb") as f:
                     f.write(uploaded_file.getbuffer())
-                opt.source = f'garm/data/videos/{uploaded_file.name}'
+                opt.source = f'garbage_streamlit/garm/data/videos/{uploaded_file.name}'
         else:
             is_valid = False
 
