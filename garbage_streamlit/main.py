@@ -27,12 +27,11 @@ def get_detection_folder():
 
 if __name__ == '__main__':
 
-    st.set_page_config(page_title='Breast cancer CAD', page_icon=':sheep:', layout='wide', initial_sidebar_state="auto")
-    st.title('网页版检测系统')
-    st.header('Web computer-aided diagnosis system for breast cancer')
+    st.set_page_config(page_title='detect trash on highways', page_icon=':sheep:', layout='wide', initial_sidebar_state="auto")
+    st.title('网页版高速路异物检测系统')
+    st.header('Web computer-aided detects trash on highways')
     st.header('Introduction')
-    st.text('This is a platform that can detect calcified lesions and tumor lesions of breast cancer.\n'
-           'You can choose to detect the lesions here and then enter your breast picture on the page.')
+    st.text('This is a platform that can detect trash on highways.')
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default='garbage_streamlit/garm/weight/best.pt', help='model path(s)')
