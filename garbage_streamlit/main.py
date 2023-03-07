@@ -28,8 +28,8 @@ def get_detection_folder():
 if __name__ == '__main__':
 
     st.set_page_config(page_title='detect trash on highways', page_icon=':sheep:', layout='wide', initial_sidebar_state="auto")
-    st.title('Web version of highway abandoned objects detection system')
-    st.header('This is a platform that can detect trash on highways.')
+    st.title('This is a platform that can detect trash on highways')
+#     st.header('.Web version of highway abandoned objects detection system')
 #     st.header('Introduction')
 #     st.text('This is a platform that can detect trash on highways.')
 
