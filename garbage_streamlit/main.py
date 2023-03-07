@@ -28,10 +28,10 @@ def get_detection_folder():
 if __name__ == '__main__':
 
     st.set_page_config(page_title='detect trash on highways', page_icon=':sheep:', layout='wide', initial_sidebar_state="auto")
-    st.title('网页版高速路异物检测系统')
-    st.header('Web computer-aided detects trash on highways')
-    st.header('Introduction')
-    st.text('This is a platform that can detect trash on highways.')
+    st.title('Web version of highway abandoned objects detection system')
+    st.header('This is a platform that can detect trash on highways.')
+#     st.header('Introduction')
+#     st.text('This is a platform that can detect trash on highways.')
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default='garbage_streamlit/garm/weight/best.pt', help='model path(s)')
@@ -62,12 +62,12 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
 
-    st.sidebar.header('图像输入')
+    st.sidebar.header('Image input')
     uploaded_file = st.sidebar.file_uploader(
-        "请选择检测图片", type=['png', 'jpeg', 'jpg'])
+        "Please select Detect picture", type=['png', 'jpeg', 'jpg'])
     if uploaded_file is not None:
         is_valid = True
-        with st.spinner(text='资源加载中...'):
+        with st.spinner(text='Resource loading...'):
             st.sidebar.image(uploaded_file)
             picture = Image.open(uploaded_file)
             picture = picture.save(f'garbage_streamlit/garm/data/images/{uploaded_file.name}')
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     #     opt.weights = 'mass/weights/mass_best.pt'
 
     if is_valid:
-        if st.sidebar.button('开始检测'):
+        if st.sidebar.button('Start detection'):
             start_detect(opt)
 
             with st.spinner(text='Preparing Images'):
