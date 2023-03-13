@@ -74,6 +74,8 @@ if __name__ == '__main__':
     source_index = st.sidebar.selectbox("选择输入", range(
         len(source)), format_func=lambda x: source[x])
     
+    
+    from streamlit_webrtc import webrtc_streamer
     webrtc_streamer(key="example")
     
     if source_index == 0:
