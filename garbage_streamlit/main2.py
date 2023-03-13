@@ -35,7 +35,7 @@ if __name__ == '__main__':
 #     parser.add_argument('--source', type=str,
 #                         default='garbage_streamlit/garm/data/images', help='source')
     parser.add_argument('--source', type=str,
-                        default='garbage_streamlit/garm/data/videos', help='source')
+                        default=0, help='source')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int,
                         default=[640], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float,
@@ -73,7 +73,9 @@ if __name__ == '__main__':
     source = ("图片检测", "视频检测")
     source_index = st.sidebar.selectbox("选择输入", range(
         len(source)), format_func=lambda x: source[x])
-
+    
+    webrtc_streamer(key="example")
+    
     if source_index == 0:
         uploaded_file = st.sidebar.file_uploader(
             "上传图片", type=['png', 'jpeg', 'jpg'])
