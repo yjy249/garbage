@@ -118,5 +118,5 @@ if __name__ == '__main__':
                 with st.spinner(text='Preparing Video'):
                     for vid in os.listdir(get_detection_folder()):
                         st.video(str(Path(f'{get_detection_folder()}') / vid))
-
+                        st.video(Path(f'{get_detection_folder()}')
                     st.balloons()
