@@ -61,7 +61,7 @@ if __name__ == '__main__':
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
-source = ("图片检测", "视频检测")
+    source = ("图片检测", "视频检测")
     source_index = st.sidebar.selectbox("选择输入", range(
         len(source)), format_func=lambda x: source[x])
 
