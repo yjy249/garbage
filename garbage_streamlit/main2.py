@@ -34,8 +34,8 @@ if __name__ == '__main__':
                         default='garbage_streamlit/garm/weight/best.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str,
                         default='garbage_streamlit/garm/data/images', help='source')
-    parser.add_argument('--img-size', type=int, default=[640],
-                        help='inference size (pixels)')
+    parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int,
+                        default=[640], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float,
                         default=0.35, help='object confidence threshold')
     parser.add_argument('--iou-thres', type=float,
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                         help='existing project/name ok, do not increment')
     opt = parser.parse_args()
     print(opt)
-    opt.imgsz *= 2 if len(opt.img-size) == 1 else 1  # expand
+    opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
 
     source = ("图片检测", "视频检测")
     source_index = st.sidebar.selectbox("选择输入", range(
