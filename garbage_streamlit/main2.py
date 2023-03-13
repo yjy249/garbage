@@ -66,7 +66,7 @@ if __name__ == '__main__':
                         help='existing project/name ok, do not increment')
     opt = parser.parse_args()
     print(opt)
-    opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
+    opt.imgsz *= 2 if len(opt.img-size) == 1 else 1  # expand
 
     source = ("图片检测", "视频检测")
     source_index = st.sidebar.selectbox("选择输入", range(
